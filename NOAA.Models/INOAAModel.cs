@@ -1,4 +1,4 @@
-﻿namespace NOAA.Api.Models
+﻿namespace NOAA.Models
 {
     public interface INOAAModel
     {

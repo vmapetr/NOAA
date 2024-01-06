@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace NOAA.Api.Models
+namespace NOAA.Models
 {
     public class EnlilTimeSeries : INOAAModel
     {
@@ -9,11 +9,8 @@ namespace NOAA.Api.Models
         [JsonIgnore]
         public int Id { get; set; }
 
-        [JsonIgnore]
-        public DateTime Timestamp => TimeTag;
-
         [JsonPropertyName("time_tag")]
-        public DateTime TimeTag { get; set; }
+        public DateTime Timestamp { get; set; }
         
         [JsonPropertyName("earth_particles_per_cm3")]
         public double? EarthParticlesRerCm3 { get; set; }

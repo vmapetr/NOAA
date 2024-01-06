@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\NOAA.Api\NOAA.Api.csproj" />
-    <ProjectReference Include="..\NOAA.Models\NOAA.Models.csproj" />
-  </ItemGroup>
-
 </Project>

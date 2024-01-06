@@ -1,5 +1,5 @@
 ﻿using NOAA.Api;
-using NOAA.Api.Models;
+using NOAA.Models;
 using NOAA.Database;
 
 namespace NOAA.Client
@@ -12,25 +12,7 @@ namespace NOAA.Client
 
             context.Database.EnsureCreated();
 
-            await DbUpdater.Update<SunspotReport>(context);
-
-            //var model = await Request.GetModelAsync<OvationAuroraLatest>();
-            //var model = await Request.GetOvationAuroraLatestModel();
-            //var coordString = String.Join(", ", model.Coordinates!.Select(i => String.Join(":", i)));
-            //Console.WriteLine($"{coordString}");
-
-            //context.BoulderKIndex1m.AddRange(model.ToArray());
-
-            //foreach (var item in model) { Console.WriteLine($"{item.ObservationTime} - {String.Join(", ", item.DataFormat)}"); }
-
-            try
-            {
-                //context.SaveChanges();
-            }
-            catch (Exception ex) 
-            { 
-                Console.WriteLine(ex.ToString());
-            }
+            await DbUpdater.Update<BoulderKIndex1m>(context);
         }
     }
 }

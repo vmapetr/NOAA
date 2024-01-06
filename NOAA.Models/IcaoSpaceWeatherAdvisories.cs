@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Text.Json.Serialization;
 
-namespace NOAA.Api.Models
+namespace NOAA.Models
 {
     public class IcaoSpaceWeatherAdvisories : INOAAModel
     {
@@ -10,14 +10,11 @@ namespace NOAA.Api.Models
         [JsonIgnore]
         public int Id { get; set; }
 
-        [JsonIgnore]
-        public DateTime Timestamp => DateTag;
-
         [JsonPropertyName("dtg")]
         public string? Dtg { get; set; }
 
         [JsonIgnore]
-        public DateTime DateTag   // <=============== Z symbol, +1h offset?
+        public DateTime Timestamp   // <=============== Z symbol, +1h offset?
         {
             get 
             {

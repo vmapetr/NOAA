@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
-using NOAA.Api.Models;
+using NOAA.Models;
 
 namespace NOAA.Database
 {

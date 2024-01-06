@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\NOAA.Api\NOAA.Api.csproj" />
     <ProjectReference Include="..\NOAA.Database\NOAA.Database.csproj" />
+    <ProjectReference Include="..\NOAA.Models\NOAA.Models.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NOAA.Api.Models;
+using NOAA.Models;
 using System.Reflection;
 using NOAA.Api;
 
@@ -9,31 +9,31 @@ namespace NOAA.Database
     {
         public static async Task Update<T>(Context context) where T : class, INOAAModel, new()
         {
-            DbSet<T>? contextProp = null;
+            DbSet<T>? dbSet = null;
 
             foreach (PropertyInfo prop in context.GetType().GetProperties()) 
             { 
                 if (prop.PropertyType == typeof(DbSet<T>)) 
                 {
-                    contextProp = (DbSet<T>?)prop.GetValue(context);
+                    dbSet = (DbSet<T>?)prop.GetValue(context);
                     break;
                 }
             }
 
-            if (contextProp == null)
+            if (dbSet == null)
             {
-                throw new Exception("contextProp is null");
+                throw new Exception("dbSet is null");
             }
 
             IEnumerable<T> remoteData = await Request.GetModelAsync<T>();
 
-            if (contextProp.Count() == 0)
+            if (dbSet.Count() == 0)
             {
-                contextProp.AddRange(remoteData);
+                dbSet.AddRange(remoteData);
             }
             else
             {
-
+                dbSet.AddRange(remoteData.Where(r => r.Timestamp > dbSet.Max(d => d.Timestamp)));
             }
 
             context.SaveChanges();

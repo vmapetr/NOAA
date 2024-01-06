@@ -1,4 +1,4 @@
-﻿using NOAA.Api.Models;
+﻿using NOAA.Models;
 using System.Text.Json;
 
 namespace NOAA.Api

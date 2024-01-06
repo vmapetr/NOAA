@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace NOAA.Api.Models
+namespace NOAA.Models
 {
     public class EditedEvents : INOAAModel
     {

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NOAA.Client", "NOAA.Client\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NOAA.Service.Windows", "NOAA.Service.Windows\NOAA.Service.Windows.csproj", "{2FB08CB0-B70A-4A61-A259-5E80E59868C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NOAA.Database", "NOAA.Database\NOAA.Database.csproj", "{DB9CA1A0-745F-4056-9DF1-E64BB734E0C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NOAA.Database", "NOAA.Database\NOAA.Database.csproj", "{DB9CA1A0-745F-4056-9DF1-E64BB734E0C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NOAA.Models", "NOAA.Models\NOAA.Models.csproj", "{9ECC3BDF-08DF-4359-B124-372327B6AF01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{DB9CA1A0-745F-4056-9DF1-E64BB734E0C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB9CA1A0-745F-4056-9DF1-E64BB734E0C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB9CA1A0-745F-4056-9DF1-E64BB734E0C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ECC3BDF-08DF-4359-B124-372327B6AF01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ECC3BDF-08DF-4359-B124-372327B6AF01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ECC3BDF-08DF-4359-B124-372327B6AF01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ECC3BDF-08DF-4359-B124-372327B6AF01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

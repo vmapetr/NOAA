@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace NOAA.Api.Models
+namespace NOAA.Models
 {
     public class ElectronFluenceForecast : INOAAModel
     {
@@ -9,11 +9,8 @@ namespace NOAA.Api.Models
         [JsonIgnore]
         public int Id { get; set; }
 
-        [JsonIgnore]
-        public DateTime Timestamp => Date;
-
         [JsonPropertyName("date")]
-        public DateTime Date { get; set; }
+        public DateTime Timestamp { get; set; }
 
         [JsonPropertyName("speed")]
         public double? Speed { get; set; }
