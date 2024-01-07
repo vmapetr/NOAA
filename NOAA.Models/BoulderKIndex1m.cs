@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using NOAA.Models.StatisticAttributes;
+using System.Text.Json.Serialization;
 
 namespace NOAA.Models
 {
@@ -12,6 +13,7 @@ namespace NOAA.Models
         [JsonPropertyName("time_tag")]
         public DateTime Timestamp { get; set; }
 
+        [Statistics]
         [JsonPropertyName("k_index")]
         public double? KIndex { get; set; }
     }

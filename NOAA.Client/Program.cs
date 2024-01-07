@@ -1,6 +1,7 @@
 ﻿using NOAA.Api;
 using NOAA.Models;
 using NOAA.Database;
+using NOAA.Database.Statistics;
 
 namespace NOAA.Client
 {
@@ -12,7 +13,15 @@ namespace NOAA.Client
 
             context.Database.EnsureCreated();
 
-            await DbUpdater.Update<BoulderKIndex1m>(context);
+            //await DbUpdater.Update<BoulderKIndex1m>(context);
+
+            IEnumerable<PredictedF107cmFlux> remoteData = await Request.GetModelAsync<PredictedF107cmFlux>();
+
+            StatisticsAnalyzer analyzer = new StatisticsAverageAnalyzer();
+
+            var avg = analyzer.GetStatistics(remoteData);
+            
+            Console.WriteLine(String.Join("\n", avg.Select(i => $"{i.Key} = {i.Value}")));
         }
     }
 }

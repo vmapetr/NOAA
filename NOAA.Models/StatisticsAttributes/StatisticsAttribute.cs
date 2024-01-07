@@ -1,6 +1,7 @@
 ﻿namespace NOAA.Models.StatisticAttributes
 {
-    public abstract class StatisticsAttribute : Attribute
+    [AttributeUsage(AttributeTargets.Property)]
+    public class StatisticsAttribute : Attribute
     {
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using NOAA.Models.StatisticAttributes;
+using System.Text.Json.Serialization;
 
 namespace NOAA.Models
 {
@@ -12,12 +13,15 @@ namespace NOAA.Models
         [JsonPropertyName("date")]
         public DateTime Timestamp { get; set; }
 
+        [Statistics]
         [JsonPropertyName("tencmfcst_1_day")]
         public int? Tencmfcst1Day { get; set; }
 
+        [Statistics]
         [JsonPropertyName("tencmfcst_2_day")]
         public int? Tencmfcst2Day { get; set; }
 
+        [Statistics]
         [JsonPropertyName("tencmfcst_3_day")]
         public int? Tencmfcst3Day { get; set; }
     }
