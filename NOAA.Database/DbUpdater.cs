@@ -11,8 +11,8 @@ namespace NOAA.Database
         {
             DbSet<T>? dbSet = null;
 
-            foreach (PropertyInfo prop in context.GetType().GetProperties()) 
-            { 
+            foreach (PropertyInfo prop in typeof(Context).GetProperties())
+            {
                 if (prop.PropertyType == typeof(DbSet<T>)) 
                 {
                     dbSet = (DbSet<T>?)prop.GetValue(context);
